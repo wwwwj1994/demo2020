@@ -16,6 +16,9 @@ public class ContainerSingleton {
 
     private static HashMap<String, ContainerSingleton> instance = new HashMap<> ();
 
+    /**
+     * 双重检查锁解决单例不安全问题 spring 源码
+     * */
     public static ContainerSingleton getInstance(String className) {
         if (!instance.containsKey(className)) {
             try {
